@@ -2,7 +2,7 @@ package homework;
 
 public class Homework1 {
     public static void main(String[] args) {
-        int x = 2;
+        int x = 3;
         int y = 11;
         if (x < y) {
             System.out.println("true");
