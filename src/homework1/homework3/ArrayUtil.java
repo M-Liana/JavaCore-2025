@@ -59,10 +59,9 @@ public class ArrayUtil {
         System.out.println(" sum is " + sum);
         //Average
         int avg = 0;
-        for (int i = 0; i < numbers.length; i++) {
             avg = sum / numbers.length;
 
-        }
+
         System.out.println(" avg ==" + avg);
     }
 
