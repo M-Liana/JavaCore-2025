@@ -7,10 +7,10 @@ public class Sort {
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 1; j <array.length ; j++) {
-                if (array[j]<array[j-1]){
-                    int tmp=array[j-1];
-                    array[j-1]=array[j];
-                    array[j]=tmp;
+                if (array[j]<array[j-1]) {
+                    int tmp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = tmp;
 
                 }
 
