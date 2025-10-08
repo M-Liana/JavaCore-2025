@@ -8,22 +8,19 @@ public class DynamicArrayDemo {
         dy.add(98);
         dy.add(55);
         dy.add(66);
-        dy.add(66);
-        dy.add(66);
-        dy.add(28);
-        dy.print();
-        System.out.println();
-        dy.add(28);
-        dy.add(28);
-        dy.add(99);
-        dy.add(99);
-        dy.add(100);
-        dy.print();
-        System.out.println();
-        System.out.println(dy.getByIndex(6));
-        System.out.println(dy.getByIndex(466));
 
 
+//        dy.print();
+//
+//        System.out.println(dy.getByIndex(1));
+//        System.out.println(dy.exists(66));
+//        System.out.println(dy.exists(56));
+//        dy.set(1,999);
+//        dy.add(1,10);
+
+        dy.print();
+        dy.deleteByIndex(1);
+        dy.print();
 
     }
 }
