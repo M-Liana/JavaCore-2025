@@ -1,4 +1,4 @@
-package chaper6;
+package chapters.chaper6;
 
 public class BoxDemo2 {
     public static void main(String[] args) {
