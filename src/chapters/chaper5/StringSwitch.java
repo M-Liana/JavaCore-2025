@@ -21,5 +21,7 @@ public class StringSwitch {
                 System.out.println("it doesn't match");
                 break;
         }
+
+        }
     }
-}
+

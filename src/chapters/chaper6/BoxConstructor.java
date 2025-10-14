@@ -1,4 +1,4 @@
-package chaper6;
+package chapters.chaper6;
 
 public class BoxConstructor {
     double width;
