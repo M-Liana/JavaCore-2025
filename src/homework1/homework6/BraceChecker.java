@@ -19,6 +19,7 @@ public class BraceChecker {
                     stack.push(c);
 
                     int pop = stack.pop();
+                    char openingBrace = (char) pop;
 
                     if (pop != ')') {
                         System.out.println("Error ․opened " + c + "but not closed  )" + " at " + i);
