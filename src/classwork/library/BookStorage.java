@@ -43,6 +43,7 @@ public class BookStorage {
         }
     }
 
+
     public Book getBookByMaxPrice() {
         double price = 0;
         int maxIndex = -1;
