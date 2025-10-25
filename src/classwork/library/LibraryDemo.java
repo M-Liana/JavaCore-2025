@@ -39,7 +39,7 @@ public class LibraryDemo implements Commands {
                 case SEARCH_BOOK_BY_PRICE:
                     System.out.println("please input  book price");
                  double price  =Double.parseDouble(scanner.nextLine());
-                 bookStorage.searchBookByPrice(price);
+                 bookStorage.searchBookByPriceRange(100,200);
                  break;
                 default:
                     System.err.println("wrong command  !  TRY AGAIN");
