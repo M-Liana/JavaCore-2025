@@ -7,7 +7,7 @@ public class Book {
     private String authorName;
     private double price;
     private String id;
-private int quantity;
+    private int quantity;
 
 
     public Book(String title, String authorName, double price, String id, int quantity) {
@@ -17,11 +17,6 @@ private int quantity;
         this.id = id;
         this.quantity = quantity;
     }
-
-    public Book() {
-    }
-
-
 
 
     public String getTitle() {

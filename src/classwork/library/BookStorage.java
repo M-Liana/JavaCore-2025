@@ -6,29 +6,22 @@ public class BookStorage {
 
 
     public void add(Book book) {
-
         if (size == books.length) {
             extend();
         }
         books[size++] = book;
-
-
     }
 
     private void extend() {
         Book[] tmp = new Book[size + 10];
         System.arraycopy(books, 0, tmp, 0, size);
         books = tmp;
-
     }
 
     public void print() {
-
         for (int i = 0; i < size; i++) {
             System.out.println(books[i]);
         }
-
-        ;
     }
 
     public void search(String keyword) {
@@ -36,20 +29,17 @@ public class BookStorage {
             if (books[i].getTitle().toLowerCase().contains(keyword.toLowerCase())) {
                 System.out.println(books[i]);
             }
-
         }
     }
 
-    public void searchBookByPrice(double price) {
-        for (int i = 0; i < size; i++) {
-            if (books[i].getPrice() > 100 && books[i].getPrice() < 200) {
 
+    public void searchBookByPrice(double price) {
+
+        for (int i = 0; i < size; i++) {
+            if (price > 100 && books[i].getPrice() > 100 && price<200 && books[i].getPrice() <200){
                 System.out.println(books[i]);
 
-
             }
-
-
         }
     }
 
@@ -67,9 +57,8 @@ public class BookStorage {
     }
 
     public void deleteBookById(String bookId) {
-
         int indexById = getIndexById(bookId);
-        if (indexById < 0) {
+        if (indexById == -1) {
             System.out.println("book does not exist ");
             return;
 
@@ -78,8 +67,6 @@ public class BookStorage {
             books[i] = books[i + 1];
         }
         size--;
-
-
     }
 
     private int getIndexById(String bookId) {
@@ -90,6 +77,5 @@ public class BookStorage {
 
         }
         return -1;
-
     }
 }
