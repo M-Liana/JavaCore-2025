@@ -1,14 +1,13 @@
 package homework1.dynamicarray;
 
-import java.util.Arrays;
+
 
 public class DynamicArray {
     private int[] array = new int[10];
     int index;
     int size = 0;
 
-    //ջնջել մասիվի index-երորդ էլեմենտը
-//եթե չկա նման ինդեքսով էլեմենտ, տպել, որ չկա նման էլեմենտ
+
     public void deleteByIndex(int index) {
 
         if (index < 0 || index > size) {
@@ -24,9 +23,7 @@ public class DynamicArray {
 
     }
 
-    //տրված value-ն դնելու ենք տրված index-ով էլեմենտի տեղը։
-//Հին արժեքը կկորի
-//եթե նման ինդեքսով էլեմենտ չկա, գրում ենք որ չկա։
+
     public void set(int index, int value) {
         if (index < 0 || index > size) {
             System.out.println("index is wrong");
@@ -34,8 +31,7 @@ public class DynamicArray {
         array[index] = value;
     }
 
-    //ավելացնել տրված value-ն տրված ինդեքսում, իսկ էղած էլեմենտները մի հատ աջ տանել։
-//Եթե չկա նման ինդեքս, տպել որ չկա
+
     public void add(int index, int value) {
         if (index < 0 || index >= size) {
             System.out.println("index is empty");
@@ -52,7 +48,6 @@ public class DynamicArray {
         size++;
     }
 
-    //Վերադարձնել true եթե տրված value-ն կա մեր մասիվի մեջ, եթե ոչ false
     public boolean exists(int value) {
         for (int i = 0; i < size; i++) {
 
@@ -64,8 +59,7 @@ public class DynamicArray {
         return false;
     }
 
-    //Վերադարձնել տրված value-ի ինդեքսը, եթե շատ կա տվյալ թվից, վերադարձնել առաջին ինդեքսը։
-//եթե չկա, -1
+
     public int getIndexByValue(int value) {
         if (index < 0 || index > size) {
             System.out.println("index is wrong");
@@ -79,7 +73,7 @@ public class DynamicArray {
         return -1;
     }
 
-//add(),,,,extend(),,print().....getByIndex();;;
+
     public void add(int value) {
 
         if (size == array.length) {

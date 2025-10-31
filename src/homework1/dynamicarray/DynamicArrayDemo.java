@@ -8,7 +8,7 @@ public class DynamicArrayDemo {
         dy.add(98);
         dy.add(55);
         dy.add(66);
-
+        dy.print();
 
 //        dy.print();
 //

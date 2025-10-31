@@ -1,4 +1,7 @@
-package classwork.library;
+package classwork.library.storage;
+
+import classwork.library.model.Author;
+import classwork.library.model.Book;
 
 public class BookStorage {
     Book[] books = new Book[10];
@@ -83,5 +86,13 @@ boolean found=false;
 
         }
         return -1;
+    }
+    public void searchBookByAuthor(Author author){
+        for (int i = 0; i < size; i++) {
+            if (books[i].getAuthor().equals(author)){
+                System.out.println(books[i]);
+            }
+
+        }
     }
 }
