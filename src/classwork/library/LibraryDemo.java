@@ -1,5 +1,6 @@
 package classwork.library;
 
+import classwork.library.exception.AuthorNotFoundException;
 import classwork.library.model.Author;
 import classwork.library.model.Book;
 import classwork.library.storage.AuthorStorage;
@@ -69,11 +70,11 @@ public class LibraryDemo implements Commands {
 
         authorStorage.print();
         String phoneNumber = scanner.nextLine();
-        Author author = authorStorage.getAuthorByPhoneNumber(phoneNumber);
-        if (author != null) {
-            bookStorage.searchBookByAuthor(author);
-        } else {
-            System.out.println(" Wrong author's phone number!! Please try again!!!! ");
+        Author author = null;
+        try {
+            author = authorStorage.getAuthorByPhoneNumber(phoneNumber);
+        } catch (AuthorNotFoundException e) {
+            System.out.println(e.getMessage());
         }
 
 
@@ -100,8 +101,10 @@ public class LibraryDemo implements Commands {
 
         authorStorage.print();
         String phoneNumber = scanner.nextLine();
-        Author author = authorStorage.getAuthorByPhoneNumber(phoneNumber);
-        if (author != null) {
+
+        Author author = null;
+        try {
+            author = authorStorage.getAuthorByPhoneNumber(phoneNumber);
             System.out.println("Please input book title");
             String bookTitle = scanner.nextLine();
             System.out.println("please input book's authorName");
@@ -116,10 +119,10 @@ public class LibraryDemo implements Commands {
             Book book = new Book(bookTitle, author, price, bookId, quantity);
             bookStorage.add(book);
             System.out.println("book added successfully");
-        } else {
-            System.out.println(" Wrong author's phone number !! please try again!!!");
-        }
 
+        } catch (AuthorNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 

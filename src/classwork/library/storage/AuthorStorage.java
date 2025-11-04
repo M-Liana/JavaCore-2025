@@ -1,5 +1,6 @@
 package classwork.library.storage;
 
+import classwork.library.exception.AuthorNotFoundException;
 import classwork.library.model.Author;
 import classwork.library.model.Book;
 
@@ -28,14 +29,14 @@ public class AuthorStorage {
         }
     }
 
-    public Author getAuthorByPhoneNumber(String phoneNumber) {
+    public Author getAuthorByPhoneNumber(String phoneNumber) throws AuthorNotFoundException {
         for (int i = 0; i < size; i++) {
             if (authors[i].getPhoneNumber().equals(phoneNumber)) {
                 return authors[i];
             }
 
         }
-        return null;
+       throw  new  AuthorNotFoundException("author with "+ phoneNumber+" does not exist");
     }
 
 
