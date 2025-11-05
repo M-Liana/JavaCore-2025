@@ -31,9 +31,15 @@ public class EmployeeDemo implements Commands {
                     employeeStorage.searchEmployeeByEmployeeId(id);
                     break;
                 case SEARCH_EMPLOYEE_BY_COMPANY_NAME:
+
                     System.out.println(" Please input company name");
                     String companyName = scanner.nextLine();
                     employeeStorage.searchEmployeeByCompanyName(companyName);
+                    break;
+                case SEARCH_EMPLOYEE_BY_POSITION_LEVEL:
+                    System.out.println("Please input position level");
+                    String positionLevel = scanner.nextLine();
+                    employeeStorage.searchEmployeeByPositionLevel(positionLevel);
                     break;
                 default:
                     System.out.println("Wrong command !!!  Please try again!!!");
@@ -53,10 +59,10 @@ public class EmployeeDemo implements Commands {
         double salary = Double.parseDouble(scanner.nextLine());
         System.out.println("Please input company name ");
         String companyName = scanner.nextLine();
-        System.out.println("please input position ");
-        String position = scanner.nextLine();
+        System.out.println("please input positionLevel ");
+        String positionLevel = scanner.nextLine();
 
-        Employee employee = new Employee(name, surname, employeeId, salary, companyName, position);
+        Employee employee = new Employee(name, surname, employeeId, salary, companyName, positionLevel);
         employeeStorage.addEmployee(employee);
         System.out.println("Employee added successfully");
 

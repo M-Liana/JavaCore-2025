@@ -8,15 +8,15 @@ public class Employee {
     private String employeeId;
     private double salary;
     private String company;
-    private String position;
+    private String positionLevel;
 
-    public Employee(String name, String surname, String employeeId, double salary, String company, String position) {
+    public Employee(String name, String surname, String employeeId, double salary, String company, String positionLevel) {
         this.name = name;
         this.surname = surname;
         this.employeeId = employeeId;
         this.salary = salary;
         this.company = company;
-        this.position = position;
+        this.positionLevel = positionLevel;
     }
 
     public Employee() {
@@ -62,12 +62,12 @@ public class Employee {
         this.company = company;
     }
 
-    public String getPosition() {
-        return position;
+    public String getPositionLevel() {
+        return positionLevel;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setPositionLevel(String positionLevel) {
+        this.positionLevel = positionLevel;
     }
 
     @Override
@@ -75,12 +75,12 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Double.compare(salary, employee.salary) == 0 && Objects.equals(name, employee.name) && Objects.equals(surname, employee.surname) && Objects.equals(employeeId, employee.employeeId) && Objects.equals(company, employee.company) && Objects.equals(position, employee.position);
+        return Double.compare(salary, employee.salary) == 0 && Objects.equals(name, employee.name) && Objects.equals(surname, employee.surname) && Objects.equals(employeeId, employee.employeeId) && Objects.equals(company, employee.company) && Objects.equals(positionLevel, employee.positionLevel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, employeeId, salary, company, position);
+        return Objects.hash(name, surname, employeeId, salary, company, positionLevel);
     }
 
     @Override
@@ -91,7 +91,7 @@ public class Employee {
                 ", employeeId='" + employeeId + '\'' +
                 ", salary=" + salary +
                 ", company='" + company + '\'' +
-                ", position='" + position + '\'' +
+                ", positionLevel='" + positionLevel + '\'' +
                 '}';
     }
 }

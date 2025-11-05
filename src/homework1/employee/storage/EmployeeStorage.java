@@ -1,6 +1,7 @@
 package homework1.employee.storage;
 
 import homework1.employee.Employee;
+import homework1.employee.EmployeeNotFoundException;
 
 public class EmployeeStorage {
     Employee[] employees = new Employee[10];
@@ -28,9 +29,10 @@ public class EmployeeStorage {
 
         }
     }
-    public void searchEmployeeByCompanyName(String companyName){
+
+    public void searchEmployeeByCompanyName(String companyName) {
         for (int i = 0; i < size; i++) {
-            if (employees[i].getCompany().toLowerCase().contains(companyName.toLowerCase())){
+            if (employees[i].getCompany().toLowerCase().contains(companyName.toLowerCase())) {
                 System.out.println(employees[i]);
             }
 
@@ -39,27 +41,25 @@ public class EmployeeStorage {
 
     public void searchEmployeeByEmployeeId(String id) {
 
-        int indexById = getIndexById(id);
-        if (indexById==-1){
-            System.out.println(" employee dose not exist ");
-            return;
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getEmployeeId().equals(id)) {
+                System.out.println(employees[i]);
+            }else {
+                System.out.println(" employee with "+ id + " doesn't exist");
+            }
         }
 
-        for (int i = indexById; i < size; i++) {
-            if (employees[i].getEmployeeId().equals(id)) {
+    }
+    public void searchEmployeeByPositionLevel(String positionLevel){
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getPositionLevel().equals(positionLevel)){
                 System.out.println(employees[i]);
             }
 
         }
-
     }
 
-    private int getIndexById(String id) {
-        for (int i = 0; i < size; i++) {
-            if (employees[i].getEmployeeId().equals(id)) {
-                return i;
-            }
-        }
-        return -1;
-    }
 }
+
+
+
