@@ -9,6 +9,7 @@ public class EmployeeDemo implements Commands {
     private static Scanner scanner = new Scanner(System.in);
     private static EmployeeStorage employeeStorage = new EmployeeStorage();
 
+
     public static void main(String[] args) {
 
         boolean isRun = true;
@@ -31,15 +32,30 @@ public class EmployeeDemo implements Commands {
                     employeeStorage.searchEmployeeByEmployeeId(id);
                     break;
                 case SEARCH_EMPLOYEE_BY_COMPANY_NAME:
-
                     System.out.println(" Please input company name");
                     String companyName = scanner.nextLine();
                     employeeStorage.searchEmployeeByCompanyName(companyName);
                     break;
+
                 case SEARCH_EMPLOYEE_BY_POSITION_LEVEL:
-                    System.out.println("Please input position level");
-                    String positionLevel = scanner.nextLine();
-                    employeeStorage.searchEmployeeByPositionLevel(positionLevel);
+                    PositionLevel[] values = PositionLevel.values();
+                    for (PositionLevel value : values) {
+                        System.out.println(value + " ");
+
+                    }
+                    System.out.println();
+                    try {
+
+                        String searchLevelInput = scanner.nextLine();
+                        PositionLevel positionLevel = PositionLevel.valueOf(searchLevelInput.toUpperCase());
+
+                        System.out.println(positionLevel);
+                    } catch (EnumConstantNotPresentException e) {
+                        System.out.println("invalid position level");
+
+                    }
+
+
                     break;
                 default:
                     System.out.println("Wrong command !!!  Please try again!!!");
@@ -59,8 +75,10 @@ public class EmployeeDemo implements Commands {
         double salary = Double.parseDouble(scanner.nextLine());
         System.out.println("Please input company name ");
         String companyName = scanner.nextLine();
+
         System.out.println("please input positionLevel ");
-        String positionLevel = scanner.nextLine();
+        String level = scanner.nextLine().toUpperCase();
+        PositionLevel positionLevel = PositionLevel.valueOf(level);
 
         Employee employee = new Employee(name, surname, employeeId, salary, companyName, positionLevel);
         employeeStorage.addEmployee(employee);

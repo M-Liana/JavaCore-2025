@@ -50,14 +50,14 @@ public class EmployeeStorage {
         }
 
     }
-    public void searchEmployeeByPositionLevel(String positionLevel){
-        for (int i = 0; i < size; i++) {
-            if (employees[i].getPositionLevel().equals(positionLevel)){
-                System.out.println(employees[i]);
-            }
-
-        }
-    }
+//    public void searchEmployeeByPositionLevel(String positionLevel){
+//        for (int i = 0; i < size; i++) {
+//            if (employees[i].getLevel().equals(positionLevel)){
+//                System.out.println(employees[i]);
+//            }
+//
+//        }
+//    }
 
 }
 
