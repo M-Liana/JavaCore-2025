@@ -1,7 +1,7 @@
 package homework1.employee.storage;
 
 import homework1.employee.Employee;
-import homework1.employee.EmployeeNotFoundException;
+import homework1.employee.PositionLevel;
 
 public class EmployeeStorage {
     Employee[] employees = new Employee[10];
@@ -50,11 +50,11 @@ public class EmployeeStorage {
         }
 
     }
-//    public void searchEmployeeByPositionLevel(String positionLevel){
+//    public void searchEmployeeByPositionLevel(String positionlLevel){
 //        for (int i = 0; i < size; i++) {
-//            if (employees[i].getLevel().equals(positionLevel)){
-//                System.out.println(employees[i]);
-//            }
+//
+//
+//
 //
 //        }
 //    }

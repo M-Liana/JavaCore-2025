@@ -36,18 +36,18 @@ public class BookStorage {
     }
 
 
-    public void searchBookByPriceRange(double min,double max) {
-boolean found=false;
+    public void searchBookByPriceRange(double min, double max) {
+        boolean found = false;
         for (int i = 0; i < size; i++) {
-            double price= books[i].getPrice();
-            if (price >=min && price<=max){
+            double price = books[i].getPrice();
+            if (price >= min && price <= max) {
                 System.out.println(books[i]);
-                found=true;
+                found = true;
 
             }
         }
-        if (!found){
-            System.out.println("No books found in price range " + min +" - " + max);
+        if (!found) {
+            System.out.println("No books found in price range " + min + " - " + max);
         }
     }
 
@@ -87,9 +87,10 @@ boolean found=false;
         }
         return -1;
     }
-    public void searchBookByAuthor(Author author){
+
+    public void searchBookByAuthor(Author author) {
         for (int i = 0; i < size; i++) {
-            if (books[i].getAuthor().equals(author)){
+            if (books[i].getAuthor().equals(author)) {
                 System.out.println(books[i]);
             }
 
