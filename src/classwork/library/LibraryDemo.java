@@ -5,15 +5,18 @@ import classwork.library.model.Author;
 import classwork.library.model.Book;
 import classwork.library.storage.AuthorStorage;
 import classwork.library.storage.BookStorage;
+import classwork.library.util.FileUtil;
 
 import java.awt.image.renderable.ContextualRenderedImageFactory;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Scanner;
 
 
 public class LibraryDemo implements Commands {
     private static Scanner scanner = new Scanner(System.in);
-    private static BookStorage bookStorage = new BookStorage();
-    private static AuthorStorage authorStorage = new AuthorStorage();
+    private static BookStorage bookStorage = FileUtil.deserializeBookStorage();
+    private static AuthorStorage authorStorage = FileUtil.deserializeAuthorStorage();
 
 
     public static void main(String[] args) {
@@ -27,9 +30,11 @@ public class LibraryDemo implements Commands {
                     break;
                 case ADD_AUTHOR:
                     addAuthor();
+                    FileUtil.serializeAuthorData(authorStorage);
                     break;
                 case ADD_BOOK:
                     addBook();
+                    FileUtil.serializeBookData(bookStorage);
                     break;
                 case PRINT_ALL_AUTHORS:
                     authorStorage.print();
@@ -107,16 +112,16 @@ public class LibraryDemo implements Commands {
             author = authorStorage.getAuthorByPhoneNumber(phoneNumber);
             System.out.println("Please input book title");
             String bookTitle = scanner.nextLine();
-            System.out.println("please input book's authorName");
-            String authorName = scanner.nextLine();
+
             System.out.println("Please input books' price");
             double price = Double.parseDouble(scanner.nextLine());
             System.out.println("please input book's id");
             String bookId = scanner.nextLine();
             System.out.println("quantity of books");
             int quantity = Integer.parseInt(scanner.nextLine());
+            Date date = new Date();
 
-            Book book = new Book(bookTitle, author, price, bookId, quantity);
+            Book book = new Book(bookTitle, author, price, bookId, quantity, date);
             bookStorage.add(book);
             System.out.println("book added successfully");
 

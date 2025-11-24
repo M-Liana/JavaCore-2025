@@ -3,8 +3,10 @@ package classwork.library.storage;
 import classwork.library.exception.AuthorNotFoundException;
 import classwork.library.model.Author;
 
+import java.io.Serializable;
 
-public class AuthorStorage {
+
+public class AuthorStorage implements Serializable {
 
     Author[] authors = new Author[10];
     int size = 0;

@@ -1,22 +1,32 @@
 package classwork.library.model;
 
+import classwork.library.util.DateUtil;
+
+import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
-public class Book{
+public class Book implements Serializable {
     private String title;
     private Author author;
     private double price;
     private String id;
     private int quantity;
+    private Date createdDate;
 
-
-    public Book(String title, Author author, double price, String id, int quantity) {
+    public Book(String title, Author author, double price, String id, int quantity, Date createdDate) {
         this.title = title;
         this.author = author;
         this.price = price;
         this.id = id;
         this.quantity = quantity;
+        this.createdDate = createdDate;
     }
+
+    public Book() {
+    }
+
+
 
 
     public String getTitle() {
@@ -59,17 +69,25 @@ public class Book{
         this.quantity = quantity;
     }
 
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Double.compare(price, book.price) == 0 && quantity == book.quantity && Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(id, book.id);
+        return Double.compare(price, book.price) == 0 && quantity == book.quantity && Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(id, book.id) && Objects.equals(createdDate, book.createdDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, author, price, id, quantity);
+        return Objects.hash(title, author, price, id, quantity, createdDate);
     }
 
     @Override
@@ -80,6 +98,7 @@ public class Book{
                 ", price=" + price +
                 ", id='" + id + '\'' +
                 ", quantity=" + quantity +
+                ", createdDate=" + DateUtil.fromDateToStr(createdDate)  +
                 '}';
     }
 }

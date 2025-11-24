@@ -3,7 +3,9 @@ package classwork.library.storage;
 import classwork.library.model.Author;
 import classwork.library.model.Book;
 
-public class BookStorage {
+import java.io.Serializable;
+
+public class BookStorage implements Serializable {
     Book[] books = new Book[10];
     int size = 0;
 

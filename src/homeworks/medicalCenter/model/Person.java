@@ -1,24 +1,32 @@
-package classwork.library.model;
+package homeworks.medicalCenter.model;
 
 
-import java.io.Serializable;
 import java.util.Objects;
 
-public class Author implements Serializable {
+public class Person {
+    private String id;
     private String name;
     private String surname;
-    private int age;
     private String phoneNumber;
-    ;
 
-    public Author(String name, String surname, int age, String phoneNumber) {
+
+    public Person(String id, String name, String surname, String phoneNumber  ) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
-        this.age = age;
         this.phoneNumber = phoneNumber;
+
     }
 
-    public Author() {
+    public Person() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -37,14 +45,6 @@ public class Author implements Serializable {
         this.surname = surname;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -57,21 +57,21 @@ public class Author implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Author author = (Author) o;
-        return age == author.age && Objects.equals(name, author.name) && Objects.equals(surname, author.surname) && Objects.equals(phoneNumber, author.phoneNumber);
+        Person person = (Person) o;
+        return Objects.equals(id, person.id) && Objects.equals(name, person.name) && Objects.equals(surname, person.surname) && Objects.equals(phoneNumber, person.phoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, age, phoneNumber);
+        return Objects.hash(id, name, surname, phoneNumber);
     }
 
     @Override
     public String toString() {
-        return "Author{" +
-                "name='" + name + '\'' +
+        return "Person{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", age=" + age +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }

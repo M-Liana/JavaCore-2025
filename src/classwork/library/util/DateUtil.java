@@ -1,0 +1,18 @@
+package classwork.library.util;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public abstract class DateUtil {
+
+    public static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+    public static String fromDateToStr(Date date) {
+return sdf.format(date);
+
+    }
+    public static Date fromDateToStr(String str) throws ParseException {
+        return sdf.parse(str);
+    }
+}
