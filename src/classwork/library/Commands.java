@@ -2,6 +2,11 @@ package classwork.library;
 
 public interface Commands {
     String EXIT = "0";
+    String LOGIN = "1";
+    String REGISTER = "2";
+
+
+    String LOGOUT="0";
     String ADD_AUTHOR = "1";
     String ADD_BOOK = "2";
     String PRINT_ALL_AUTHORS = "3";
@@ -11,10 +16,12 @@ public interface Commands {
     String PRINT_EXPENSIVE_BOOK = "7";
     String DELETE_BOOK_BY_ID = "8";
     String SEARCH_BOOK_BY_PRICE = "9";
+    String PRINT_ALL_USER="10";
+    String REMOVE_USER_BY_EMAIL="11";
 
 
-    static void printCommands() {
-        System.out.println("please input " + EXIT + " for EXIT");
+    static void printUserCommands() {
+        System.out.println("please input " +LOGOUT + " for LOGOUT");
         System.out.println("please input " + ADD_AUTHOR + " for ADD AUTHOR");
         System.out.println("please input " + ADD_BOOK + " for ADD BOOK");
         System.out.println("please input " + PRINT_ALL_AUTHORS + " for PRINT ALL AUTHORS ");
@@ -26,5 +33,25 @@ public interface Commands {
         System.out.println("please input " + SEARCH_BOOK_BY_PRICE + " for SEARCH BOOK BY PRICE  ");
 
 
+    }   static void printAdminCommands() {
+        System.out.println("please input " +LOGOUT + " for LOGOUT");
+        System.out.println("please input " + ADD_AUTHOR + " for ADD AUTHOR");
+        System.out.println("please input " + ADD_BOOK + " for ADD BOOK");
+        System.out.println("please input " + PRINT_ALL_AUTHORS + " for PRINT ALL AUTHORS ");
+        System.out.println("please input " + PRINT_ALL_BOOKS + " for PRINT ALL BOOKS ");
+        System.out.println("please input " + SEARCH_BOOK_BY_TITLE + " for SEARCH BOOK BY TITLE ");
+        System.out.println("please input " + SEARCH_BOOK_BY_AUTHOR + " for SEARCH BOOK BY AUTHOR ");
+        System.out.println("please input " + PRINT_EXPENSIVE_BOOK + " for PRINT EXPENSIVE BOOK ");
+        System.out.println("please input " + DELETE_BOOK_BY_ID + " for DELETE BOOK BY ID");
+        System.out.println("please input " + SEARCH_BOOK_BY_PRICE + " for SEARCH BOOK BY PRICE  ");
+        System.out.println("please input " +PRINT_ALL_USER + " for PRINT_ALL_USER ");
+        System.out.println("please input " +REMOVE_USER_BY_EMAIL + " for REMOVE_USER_BY_EMAIL  ");
+
+
+    }
+    static void printCommands(){
+        System.out.println("please input " + EXIT + " for EXIT");
+        System.out.println("please input " + LOGIN + " for LOGIN  ");
+        System.out.println("please input " + REGISTER + " for   REGISTER ");
     }
 }

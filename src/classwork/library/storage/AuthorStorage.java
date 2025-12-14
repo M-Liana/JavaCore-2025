@@ -4,37 +4,32 @@ import classwork.library.exception.AuthorNotFoundException;
 import classwork.library.model.Author;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 
 public class AuthorStorage implements Serializable {
 
-    Author[] authors = new Author[10];
-    int size = 0;
+  List<Author>authors= new LinkedList<>();
+
 
 
     public void addAuthor(Author author) {
-        if (size == authors.length) {
-            extend();
-        }
-        authors[size++] = author;
-    }
-
-    private void extend() {
-        Author[] tmp = new Author[size + 10];
-        System.arraycopy(authors, 0, tmp, 0, size);
-        authors = tmp;
+      authors.add(author);
     }
 
     public void print() {
-        for (int i = 0; i < size; i++) {
-            System.out.println(authors[i]);
+        for (Author author : authors) {
+            System.out.println(author);
+
         }
     }
 
     public Author getAuthorByPhoneNumber(String phoneNumber) throws AuthorNotFoundException {
-        for (int i = 0; i < size; i++) {
-            if (authors[i].getPhoneNumber().equals(phoneNumber)) {
-                return authors[i];
+        for (Author author : authors) {
+            if (author.getPhoneNumber().equals(phoneNumber)){
+               return author;
             }
 
         }
